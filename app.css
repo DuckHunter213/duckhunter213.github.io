@@ -1,0 +1,24 @@
+.img-wallpaper{
+  background-image: url("wallpaper.png");
+  height: -webkit-fill-available;
+}
+
+.rojo{
+  background-color: red;
+}
+
+.link{
+  color: none;
+  text-decoration: none;
+}
+
+.one-margin-top{
+  margin-top: 1em;
+}
+
+.container-flex{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+}
