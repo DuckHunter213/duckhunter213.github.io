@@ -1,0 +1,23 @@
+[
+	{
+		"nombre_empresa" : "Universidad Veracruzana",
+		"tiempo_estadia" : "1 Año",
+		"puesto"         : "Servicio Social",
+		"fecha_inicio"   : "01-01-2018",
+		"fecha_fin"      : "01-01-2019",
+	},
+	{
+		"nombre_empresa" : "Ehecatl Software Services",
+		"tiempo_estadia" : "??",
+		"puesto"         : "Ingeniero de Software Jr.",
+		"fecha_inicio"   : "01-01-2018",
+		"fecha_fin"      : "01-01-2019",
+	},
+	{
+		"nombre_empresa" : "Freelancer",
+		"tiempo_estadia" : "6 meses",
+		"puesto"         : "Full Stack Developer",
+		"fecha_inicio"   : "01-01-2018",
+		"fecha_fin"      : "01-01-2019",
+	}
+]

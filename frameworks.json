@@ -1,0 +1,57 @@
+[
+	{
+		"nombre_framework"      : "Angular",
+		"lenguaje_programacion" : "JavaScript",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "JQuery",
+		"lenguaje_programacion" : "JavaScript",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "Unity",
+		"lenguaje_programacion" : "C# / JavaScript",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "CodeIgniter",
+		"lenguaje_programacion" : "PHP",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "Laravel",
+		"lenguaje_programacion" : "PHP",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "Node.js",
+		"lenguaje_programacion" : "JavaScript",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "Boostrap",
+		"lenguaje_programacion" : "CSS",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "Zurb Foundation",
+		"lenguaje_programacion" : "CSS",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "Bulma",
+		"lenguaje_programacion" : "CSS",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "Windows Presentation Foundation",
+		"lenguaje_programacion" : "C#",
+		"nivel_experiencia"     : 0,
+	},
+	{
+		"nombre_framework"      : "",
+		"lenguaje_programacion" : "",
+		"nivel_experiencia"     : 0,
+	}
+]

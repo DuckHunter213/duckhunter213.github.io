@@ -1,39 +1,138 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <link rel="stylesheet" type="text/css" href="app.css">
-      <!--Jquery-->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="app.js"></script>
-      <!--Boostrap-->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="app.css">
+			<!--Jquery-->
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+			<script type="text/javascript" src="app.js"></script>
+			<!--Boostrap-->
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+			<!--Let browser know website is optimized for mobile-->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		</head>
+		<script type="text/javascript" src="empresas.json"></script>
 
-    <body>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="d-flex text-center">
-              <h3>Luis Fernando Gomez Alejandre</h3>
-            </div>
-          </div>
-          <div class="col-lg-9 img-wallpaper">
-            <div class="container one-margin-top">
-              <div class="row float-right">
-                <button class="btn btn-light">
-                  <a class="link" href="mailto:gomez.alejandre@gmail.com">Enviarme e-mail</a>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </body>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				var empresas = JSON.parse(empresas);
+				console.log(empresas);
+				/*
+				$.getJSON("empresas.json", function(empresas) {
+					console.log(empresas);
+				});
+				*/
+			});
 
-       
-  </html>
+		</script>
+		<body>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="d-flex text-center">
+							<h3>Luis Fernando Gomez Alejandre</h3>
+						</div>
+					</div>
+					<div class="col-lg-9 img-wallpaper" style="color: yellow">
+						<!--
+							<div class="col-lg-12">
+								<h1>Experiencia</h1>
+								<ul></ul>
+
+								<h2>Lenguajes</h2>
+								<ul id="lenguajes">
+									<li>PHP 80%</li>
+									<li>HTML 80%</li>
+									<li>C# 55%</li>
+									<li>Java 40%</li>
+									<li>Python 35%</li>
+									<li>C++ 35%</li>
+									<li>CSS 35%</li>
+									<li>Android 25%</li>
+									<li>Mysql 75%</li>
+									<li>SQL Server 65%</li>
+									<li>Oracle 5%</li>
+								</ul>
+
+
+								<h2>Herramientas</h2>
+								<ul>
+									<li>Enterprise Architech</li>
+									<li>MS Office</li>
+									<li>MS Excel</li>
+									<li>Visual Studio</li>
+									<li>Photoshop</li>
+								</ul>
+
+								<h2>Habilidades</h2>
+								<ul>
+									<li>Trabajo en equipo</li>
+									<li>Refactorización de código</li>
+									<li>Documentación</li>
+									<li>Diagramador</li>
+								</ul>
+
+								<h2>Proyectos</h2>
+								<ul>
+									<li>Maquiver</li>
+									<li>Manitas Limpias</li>
+									<li>Ehecatl CRM</li>
+									<li>Batalla naval</li>
+									<li>Batalla naval</li>
+								</ul>
+							</div>
+						-->
+						<!--
+						<div class="col-lg-12" style="color: black">
+							Notas Woodpecker: Recuerda al menos mencionar
+
+								* El nombre de la aplicación.
+								* Lenguaje en el que esta desarollado.
+								* Finalidad del proyecto.
+								* Tiempo de experiencia.
+								* Aprendizaje aprendido.
+								* Tipo de caracter.
+
+
+							<h3>Ehecatl CRM</h3>
+							<label>Caracter: Laboral</label>
+							<p> manejador de recursos empresariales</p>
+
+
+							<h3>Maquiver</h3>
+							<label>Caracter: Laboral</label>
+							<p> es una aplicación web dedicada a la creacion o mantenimiento
+								la cual basa su sistema en un servidor PHP con el framework de codeigniter</p>
+
+							<h3>Signati Litteris</h3>
+							<label>Caracter: Escolar / Educativo</label>
+							<p> Es una aplicacion que se dedica a la firma electronica pdf validando y dando aval a que los documentos tienen validez con una firma electronica</p>
+
+							<h3>Batalla naval</h3>
+							<label>Caracter: Escolar / Educativo</label>
+							<p> Aplicación que tiene como finalidad la intencion de mostrar el funcionamiento de la conectividad entre aplicaciones de escritorio</p>
+
+							<h3>Manitas Limpias</h3>
+							<label>Caracter: Freelancer</label>
+							<p> Proyecto multidiciplinario trabajado para el ahora Maestro en Psicologia y Educación [Insertar el nombre al que le trabajamos]
+								con ayuda de una programadora
+							</p>
+						</div>
+						-->
+
+						<div class="container one-margin-top">
+							<div class="row float-right">
+								<button class="btn btn-light">
+									<a class="link" href="mailto:gomez.alejandre@gmail.com">Enviarme e-mail</a>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</body>
+
+
+	</html>

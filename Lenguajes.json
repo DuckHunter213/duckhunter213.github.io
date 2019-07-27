@@ -1,0 +1,50 @@
+[
+	{
+		"nombre_lenguaje" : "C#",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "PHP",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "HTML",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "C++",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "C",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "Python",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "Java",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "CSS",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "Mysql",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "SQL Server",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "Lisp",
+		"nivel_experiencia" : 0
+	},
+	{
+		"nombre_lenguaje" : "Prolog",
+		"nivel_experiencia" : 0
+	}
+]

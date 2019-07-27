@@ -1,0 +1,24 @@
+[
+	{
+		"nombre"             : "Manitas limpias",
+		"tiempo_experiencia" : "6 meses",
+		"caracter"           : "Freelancer",
+		"lenguaje_principal" : "C#",
+		"framework"          : "Unity Game Development",
+		"descripcion"        : "Manitas limpias es un proyecto cuya finalidad era demostrar a los niños la importancia de lavarse las manos",
+	},{
+		"nombre"             : "Maquiver",
+		"tiempo_experiencia" : "5 Meses",
+		"caracter"           : "Laboral",
+		"lenguaje_principal" : "PHP / HTML / JavaSricpt",
+		"framework"          : "Unity Game Development",
+		"descripcion"        : "Manitas limpias es un proyecto cuya finalidad era demostrar a los niños la importancia de lavarse las manos",
+	},{
+		"nombre"             : "Signati Litteris",
+		"tiempo_experiencia" : "5 Meses",
+		"caracter"           : "Laboral",
+		"lenguaje_principal" : "PHP / HTML / JavaSricpt",
+		"framework"          : "Unity Game Development",
+		"descripcion"        : "Manitas limpias es un proyecto cuya finalidad era demostrar a los niños la importancia de lavarse las manos",
+	}
+]
