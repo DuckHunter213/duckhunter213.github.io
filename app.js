@@ -12,7 +12,81 @@ const DATA_FILES = {
   courses: "cursos.json"
 };
 
+const SUPPORTED_LANGUAGES = ["es", "en"];
+
+const UI_COPY = {
+  es: {
+    pageTitle: "CV Digital | Luis Fernando Gomez Alejandre",
+    pageDescription:
+      "CV digital adaptable por perfil para roles tech. Experiencia, proyectos, estudios, certificaciones y stack cargados desde JSON en una web estatica.",
+    adaptable: "CV adaptable",
+    focusTitle: "Enfoca tu perfil segun la vacante",
+    focusCopy: "El contenido se prioriza por experiencia relevante y el enlace se puede compartir con el perfil activo.",
+    copyLink: "Copiar link del perfil",
+    copied: "Link copiado",
+    manualCopy: "Copia manual: revisa la URL",
+    heroEyebrow: "CV digital para reclutamiento tech",
+    heroCardTitle: "Lo que lee RH en este modo",
+    experienceEyebrow: "Experiencia",
+    experienceTitle: "Empresas y trayectoria",
+    experienceCopy: "Se prioriza lo mas cercano al perfil activo para facilitar el filtro de RH.",
+    projectsEyebrow: "Proyectos",
+    projectsTitle: "Resultados y contexto tecnico",
+    projectsCopy: "Cada proyecto incluye stack, caracter del trabajo y valor para reclutamiento.",
+    educationEyebrow: "Educacion",
+    educationTitle: "Estudios",
+    educationCopy: "Usa el nombre exacto del grado para que RH lo valide rapido.",
+    skillsEyebrow: "Stack",
+    skillsTitle: "Habilidades tecnicas",
+    credentialsEyebrow: "Credenciales",
+    certificationsTitle: "Certificaciones",
+    coursesTitle: "Cursos relevantes",
+    languagesGroup: "Lenguajes",
+    frameworksGroup: "Frameworks",
+    toolsGroup: "Herramientas",
+    methodsGroup: "Metodologias",
+    appliedExperience: "Experiencia aplicada",
+    errorEyebrow: "Error de carga",
+    errorTitle: "No se pudo construir el CV"
+  },
+  en: {
+    pageTitle: "Digital Resume | Luis Fernando Gomez Alejandre",
+    pageDescription:
+      "Digital resume tailored by target role. Experience, projects, education, certifications, and stack loaded from JSON in a static site.",
+    adaptable: "Adaptive resume",
+    focusTitle: "Focus your profile for the role",
+    focusCopy: "Content is prioritized by relevance so you can share the exact version that fits the vacancy.",
+    copyLink: "Copy profile link",
+    copied: "Link copied",
+    manualCopy: "Manual copy: check the URL",
+    heroEyebrow: "Digital resume for tech hiring",
+    heroCardTitle: "What recruiters see in this mode",
+    experienceEyebrow: "Experience",
+    experienceTitle: "Companies and journey",
+    experienceCopy: "Entries closer to the active profile are shown first to help recruiter screening.",
+    projectsEyebrow: "Projects",
+    projectsTitle: "Results and technical context",
+    projectsCopy: "Each project includes stack, work context, and recruiter-friendly value.",
+    educationEyebrow: "Education",
+    educationTitle: "Education",
+    educationCopy: "Use the exact degree name so recruiters can validate it quickly.",
+    skillsEyebrow: "Stack",
+    skillsTitle: "Technical skills",
+    credentialsEyebrow: "Credentials",
+    certificationsTitle: "Certifications",
+    coursesTitle: "Relevant courses",
+    languagesGroup: "Languages",
+    frameworksGroup: "Frameworks",
+    toolsGroup: "Tools",
+    methodsGroup: "Methodologies",
+    appliedExperience: "Hands-on experience",
+    errorEyebrow: "Load error",
+    errorTitle: "The resume could not be built"
+  }
+};
+
 const state = {
+  language: "es",
   audience: null,
   data: null
 };
@@ -21,9 +95,10 @@ document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
   try {
+    state.language = getLanguageFromUrl();
     const entries = await Promise.all(
       Object.entries(DATA_FILES).map(async ([key, path]) => {
-        const response = await fetch(path);
+        const response = await fetch(getDataPath(path));
 
         if (!response.ok) {
           throw new Error(`No se pudo cargar ${path}`);
@@ -48,32 +123,84 @@ function bindEvents() {
 
   shareButton.addEventListener("click", async () => {
     const shareUrl = new URL(window.location.href);
+    shareUrl.searchParams.set("lang", state.language);
     shareUrl.searchParams.set("perfil", state.audience);
 
     try {
       await navigator.clipboard.writeText(shareUrl.toString());
-      shareButton.textContent = "Link copiado";
+      shareButton.textContent = t("copied");
       window.setTimeout(() => {
-        shareButton.textContent = "Copiar link del perfil";
+        shareButton.textContent = t("copyLink");
       }, 1800);
     } catch (error) {
-      shareButton.textContent = "Copia manual: revisa la URL";
+      shareButton.textContent = t("manualCopy");
       window.setTimeout(() => {
-        shareButton.textContent = "Copiar link del perfil";
+        shareButton.textContent = t("copyLink");
       }, 2200);
     }
   });
 }
 
 function render() {
+  renderPageMeta();
+  renderLanguageButtons();
   renderHero();
   renderProfileButtons();
   renderExperience();
   renderProjects();
   renderEducation();
   renderSkills();
-  renderSimpleSection("certifications-section", "Certificaciones", state.data.certifications, certificationTemplate);
-  renderSimpleSection("courses-section", "Cursos relevantes", state.data.courses, courseTemplate);
+  renderSimpleSection("certifications-section", t("certificationsTitle"), state.data.certifications, certificationTemplate);
+  renderSimpleSection("courses-section", t("coursesTitle"), state.data.courses, courseTemplate);
+  document.getElementById("share-profile-link").textContent = t("copyLink");
+  document.querySelector(".panel .eyebrow").textContent = t("adaptable");
+  document.querySelector(".panel h2").textContent = t("focusTitle");
+  document.querySelector(".panel .panel-copy").textContent = t("focusCopy");
+}
+
+function renderPageMeta() {
+  document.documentElement.lang = state.language;
+  document.title = t("pageTitle");
+  const description = document.querySelector('meta[name="description"]');
+
+  if (description) {
+    description.setAttribute("content", t("pageDescription"));
+  }
+}
+
+function renderLanguageButtons() {
+  const container = document.getElementById("language-switcher");
+
+  container.innerHTML = SUPPORTED_LANGUAGES
+    .map(
+      (language) => `
+        <button
+          class="ghost-button language-button ${language === state.language ? "active" : ""}"
+          type="button"
+          data-language="${language}"
+        >
+          ${language.toUpperCase()}
+        </button>
+      `
+    )
+    .join("");
+
+  container.querySelectorAll("[data-language]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const nextLanguage = button.dataset.language;
+
+      if (nextLanguage === state.language) {
+        return;
+      }
+
+      state.language = nextLanguage;
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", state.language);
+      window.history.replaceState({}, "", url);
+      await reloadData();
+      render();
+    });
+  });
 }
 
 function renderHero() {
@@ -85,7 +212,7 @@ function renderHero() {
   document.getElementById("hero").innerHTML = `
     <div class="hero-layout reveal">
       <div>
-        <p class="eyebrow">CV digital para reclutamiento tech</p>
+        <p class="eyebrow">${t("heroEyebrow")}</p>
         <h1>${profile.name} <span class="hero-title">${profile.lastNameAccent}</span></h1>
         <p class="hero-role">${activeHeadline}</p>
         <p class="hero-summary">${activeSummary}</p>
@@ -97,7 +224,7 @@ function renderHero() {
         </div>
       </div>
       <div class="hero-card">
-        <h2>Lo que lee RH en este modo</h2>
+        <h2>${t("heroCardTitle")}</h2>
         <ul class="compact-list">
           <li>${activeAudience.summary}</li>
           ${profile.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
@@ -129,6 +256,7 @@ function renderProfileButtons() {
     button.addEventListener("click", () => {
       state.audience = button.dataset.audience;
       const url = new URL(window.location.href);
+      url.searchParams.set("lang", state.language);
       url.searchParams.set("perfil", state.audience);
       window.history.replaceState({}, "", url);
       render();
@@ -144,9 +272,9 @@ function renderExperience() {
   section.innerHTML = `
     <div class="section-title">
       <div>
-        <p class="eyebrow">Experiencia</p>
-        <h2>Empresas y trayectoria</h2>
-        <p>Se prioriza lo mas cercano al perfil activo para facilitar el filtro de RH.</p>
+        <p class="eyebrow">${t("experienceEyebrow")}</p>
+        <h2>${t("experienceTitle")}</h2>
+        <p>${t("experienceCopy")}</p>
       </div>
     </div>
     <div class="timeline">
@@ -162,9 +290,9 @@ function renderProjects() {
   section.innerHTML = `
     <div class="section-title">
       <div>
-        <p class="eyebrow">Proyectos</p>
-        <h2>Resultados y contexto tecnico</h2>
-        <p>Cada proyecto incluye stack, caracter del trabajo y valor para reclutamiento.</p>
+        <p class="eyebrow">${t("projectsEyebrow")}</p>
+        <h2>${t("projectsTitle")}</h2>
+        <p>${t("projectsCopy")}</p>
       </div>
     </div>
     <div class="timeline">
@@ -188,9 +316,9 @@ function renderEducation() {
   section.innerHTML = `
     <div class="section-title">
       <div>
-        <p class="eyebrow">Educacion</p>
-        <h2>Estudios</h2>
-        <p>Usa el nombre exacto del grado para que RH lo valide rapido.</p>
+        <p class="eyebrow">${t("educationEyebrow")}</p>
+        <h2>${t("educationTitle")}</h2>
+        <p>${t("educationCopy")}</p>
       </div>
     </div>
     <div class="timeline">
@@ -204,24 +332,25 @@ function renderSkills() {
   const groups = [
     {
       title: "Lenguajes",
+      title: t("languagesGroup"),
       items: prioritizeByAudience(state.data.languages),
       valueField: "name",
       noteField: "level"
     },
     {
-      title: "Frameworks",
+      title: t("frameworksGroup"),
       items: prioritizeByAudience(state.data.frameworks),
       valueField: "name",
       noteField: "focus"
     },
     {
-      title: "Herramientas",
+      title: t("toolsGroup"),
       items: prioritizeByAudience(state.data.tools),
       valueField: "name",
       noteField: "focus"
     },
     {
-      title: "Metodologias",
+      title: t("methodsGroup"),
       items: prioritizeByAudience(state.data.methods),
       valueField: "name",
       noteField: "focus"
@@ -231,8 +360,8 @@ function renderSkills() {
   section.innerHTML = `
     <div class="section-title">
       <div>
-        <p class="eyebrow">Stack</p>
-        <h2>Habilidades tecnicas</h2>
+        <p class="eyebrow">${t("skillsEyebrow")}</p>
+        <h2>${t("skillsTitle")}</h2>
       </div>
     </div>
     <div class="stack-groups">
@@ -266,7 +395,7 @@ function renderSimpleSection(sectionId, title, items, template) {
   section.innerHTML = `
     <div class="section-title">
       <div>
-        <p class="eyebrow">Credenciales</p>
+        <p class="eyebrow">${t("credentialsEyebrow")}</p>
         <h2>${title}</h2>
       </div>
     </div>
@@ -363,7 +492,7 @@ function badgeTemplate(title, subtitle) {
   return `
     <div class="badge reveal">
       <strong>${title}</strong>
-      <span>${subtitle || "Experiencia aplicada"}</span>
+      <span>${subtitle || t("appliedExperience")}</span>
     </div>
   `;
 }
@@ -399,12 +528,37 @@ function getAudienceFromUrl() {
   return new URLSearchParams(window.location.search).get("perfil");
 }
 
+function getLanguageFromUrl() {
+  const language = new URLSearchParams(window.location.search).get("lang");
+  return SUPPORTED_LANGUAGES.includes(language) ? language : "es";
+}
+
+function getDataPath(fileName) {
+  return `data/${state.language}/${fileName}`;
+}
+
+async function reloadData() {
+  const entries = await Promise.all(
+    Object.entries(DATA_FILES).map(async ([key, path]) => {
+      const response = await fetch(getDataPath(path));
+
+      if (!response.ok) {
+        throw new Error(`No se pudo cargar ${getDataPath(path)}`);
+      }
+
+      return [key, await response.json()];
+    })
+  );
+
+  state.data = Object.fromEntries(entries);
+}
+
 function renderError(error) {
   document.body.innerHTML = `
     <main class="page-shell">
       <section class="panel">
-        <p class="eyebrow">Error de carga</p>
-        <h1>No se pudo construir el CV</h1>
+        <p class="eyebrow">${t("errorEyebrow")}</p>
+        <h1>${t("errorTitle")}</h1>
         <p class="panel-copy">${error.message}</p>
       </section>
     </main>
@@ -413,4 +567,8 @@ function renderError(error) {
 
 function pill(content) {
   return `<span class="pill">${content}</span>`;
+}
+
+function t(key) {
+  return UI_COPY[state.language][key] || UI_COPY.es[key] || key;
 }
