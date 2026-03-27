@@ -1,7 +1,27 @@
 [
   {
-    "nombre_herramienta" : "",
-    "lenguaje_principal" : "",
-    "nivel_experiencia"  : "",
+    "name": "Git",
+    "focus": "Versionamiento",
+    "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
+  },
+  {
+    "name": "Visual Studio",
+    "focus": "Desarrollo C#",
+    "audiences": ["gamedev", "backend"]
+  },
+  {
+    "name": "VS Code",
+    "focus": "Desarrollo web",
+    "audiences": ["frontend", "fullstack", "backend", "shared"]
+  },
+  {
+    "name": "MySQL",
+    "focus": "Base de datos",
+    "audiences": ["backend", "fullstack", "shared"]
+  },
+  {
+    "name": "SQL Server",
+    "focus": "Base de datos",
+    "audiences": ["backend", "shared"]
   }
 ]

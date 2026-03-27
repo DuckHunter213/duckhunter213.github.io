@@ -1,23 +1,37 @@
 [
-	{
-		"nombre_empresa" : "Universidad Veracruzana",
-		"tiempo_estadia" : "1 Año",
-		"puesto"         : "Servicio Social",
-		"fecha_inicio"   : "01-01-2018",
-		"fecha_fin"      : "01-01-2019",
-	},
-	{
-		"nombre_empresa" : "Ehecatl Software Services",
-		"tiempo_estadia" : "??",
-		"puesto"         : "Ingeniero de Software Jr.",
-		"fecha_inicio"   : "01-01-2018",
-		"fecha_fin"      : "01-01-2019",
-	},
-	{
-		"nombre_empresa" : "Freelancer",
-		"tiempo_estadia" : "6 meses",
-		"puesto"         : "Full Stack Developer",
-		"fecha_inicio"   : "01-01-2018",
-		"fecha_fin"      : "01-01-2019",
-	}
+  {
+    "company": "Ehecatl Software Services",
+    "role": "Ingeniero de Software Jr.",
+    "start": "2018",
+    "end": "2019",
+    "duration": "1 ano aprox.",
+    "type": "Laboral",
+    "summary": "Participacion en desarrollo de software y mantenimiento de soluciones empresariales con enfoque full stack y entrega funcional.",
+    "stack": ["PHP", "JavaScript", "CodeIgniter", "MySQL"],
+    "audiences": ["fullstack", "backend", "shared"],
+    "featuredFor": ["fullstack", "backend"]
+  },
+  {
+    "company": "Freelancer",
+    "role": "Full Stack Developer",
+    "start": "2019",
+    "end": "2019",
+    "duration": "6 meses",
+    "type": "Freelance",
+    "summary": "Desarrollo de soluciones a medida con contacto directo con cliente, levantamiento de requerimientos y entrega iterativa.",
+    "stack": ["C#", "Unity", "HTML", "JavaScript"],
+    "audiences": ["fullstack", "frontend", "gamedev", "shared"],
+    "featuredFor": ["gamedev", "frontend"]
+  },
+  {
+    "company": "Universidad Veracruzana",
+    "role": "Servicio Social",
+    "start": "2018",
+    "end": "2019",
+    "duration": "1 ano",
+    "type": "Academico",
+    "summary": "Apoyo en proyectos institucionales y experiencia temprana en trabajo con procesos, usuarios y documentacion tecnica.",
+    "stack": ["Documentacion", "Soporte", "Trabajo colaborativo"],
+    "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
+  }
 ]

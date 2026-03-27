@@ -1,0 +1,22 @@
+[
+  {
+    "id": "fullstack",
+    "label": "Full Stack",
+    "summary": "Balance entre negocio, frontend y backend"
+  },
+  {
+    "id": "backend",
+    "label": "Backend",
+    "summary": "Servicios, logica, datos e integracion"
+  },
+  {
+    "id": "frontend",
+    "label": "Frontend",
+    "summary": "Interfaces, UX y experiencia web"
+  },
+  {
+    "id": "gamedev",
+    "label": "C# / Unity",
+    "summary": "Interactividad, educacion y simulacion"
+  }
+]

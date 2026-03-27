@@ -1,50 +1,47 @@
 [
-	{
-		"nombre_lenguaje" : "C#",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "PHP",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "HTML",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "C++",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "C",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "Python",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "Java",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "CSS",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "Mysql",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "SQL Server",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "Lisp",
-		"nivel_experiencia" : 0
-	},
-	{
-		"nombre_lenguaje" : "Prolog",
-		"nivel_experiencia" : 0
-	}
+  {
+    "name": "C#",
+    "level": "Fuerte",
+    "audiences": ["gamedev", "backend", "shared"]
+  },
+  {
+    "name": "PHP",
+    "level": "Fuerte",
+    "audiences": ["backend", "fullstack", "shared"]
+  },
+  {
+    "name": "JavaScript",
+    "level": "Fuerte",
+    "audiences": ["frontend", "fullstack", "shared"]
+  },
+  {
+    "name": "HTML",
+    "level": "Avanzado",
+    "audiences": ["frontend", "fullstack"]
+  },
+  {
+    "name": "CSS",
+    "level": "Avanzado",
+    "audiences": ["frontend", "fullstack"]
+  },
+  {
+    "name": "Python",
+    "level": "Intermedio",
+    "audiences": ["backend"]
+  },
+  {
+    "name": "Java",
+    "level": "Intermedio",
+    "audiences": ["backend"]
+  },
+  {
+    "name": "C++",
+    "level": "Intermedio",
+    "audiences": ["gamedev"]
+  },
+  {
+    "name": "SQL",
+    "level": "Aplicado en proyectos",
+    "audiences": ["backend", "fullstack", "shared"]
+  }
 ]

@@ -1,140 +1,56 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<link rel="stylesheet" type="text/css" href="app.css">
-			<!--Jquery-->
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-			<script type="text/javascript" src="app.js"></script>
-			<!--Boostrap-->
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Digital | Luis Fernando Gomez Alejandre</title>
+    <meta
+      name="description"
+      content="CV digital adaptable por perfil para roles tech. Experiencia, proyectos, estudios, certificaciones y stack cargados desde JSON en una web estatica."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="app.css">
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="page">
+        <section class="hero" id="hero"></section>
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">CV adaptable</p>
+              <h2>Enfoca tu perfil segun la vacante</h2>
+              <p class="panel-copy">
+                El contenido se prioriza por experiencia relevante y el enlace se puede compartir con el perfil activo.
+              </p>
+            </div>
+            <button class="ghost-button" id="share-profile-link" type="button">
+              Copiar link del perfil
+            </button>
+          </div>
+          <div class="profile-switcher" id="profile-switcher"></div>
+        </section>
 
-			<!--Let browser know website is optimized for mobile-->
-			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		</head>
-		<script type="text/javascript" src="empresas.json"></script>
+        <section class="grid">
+          <div class="main-column">
+            <section class="panel" id="experience-section"></section>
+            <section class="panel" id="projects-section"></section>
+            <section class="panel" id="education-section"></section>
+          </div>
 
-		<script type="text/javascript">
-			$( document ).ready(function() {
-				var empresas = JSON.parse(empresas);
-				console.log(empresas);
-				/*
-				$.getJSON("empresas.json", function(empresas) {
-					console.log(empresas);
-				});
-				*/
-			});
-
-		</script>
-		<body>
-			<script src="//myradiostream.com/embed/lordculhy"></script>
-    			<script src="//myradiostream.com/embed/BlackWoodPecker"></script>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-3">
-						<div class="d-flex text-center">
-							<h3>Luis Fernando Gomez Alejandre</h3>
-						</div>
-					</div>
-					<div class="col-lg-9 img-wallpaper" style="color: yellow">
-						<!--
-							<div class="col-lg-12">
-								<h1>Experiencia</h1>
-								<ul></ul>
-
-								<h2>Lenguajes</h2>
-								<ul id="lenguajes">
-									<li>PHP 80%</li>
-									<li>HTML 80%</li>
-									<li>C# 55%</li>
-									<li>Java 40%</li>
-									<li>Python 35%</li>
-									<li>C++ 35%</li>
-									<li>CSS 35%</li>
-									<li>Android 25%</li>
-									<li>Mysql 75%</li>
-									<li>SQL Server 65%</li>
-									<li>Oracle 5%</li>
-								</ul>
-
-
-								<h2>Herramientas</h2>
-								<ul>
-									<li>Enterprise Architech</li>
-									<li>MS Office</li>
-									<li>MS Excel</li>
-									<li>Visual Studio</li>
-									<li>Photoshop</li>
-								</ul>
-
-								<h2>Habilidades</h2>
-								<ul>
-									<li>Trabajo en equipo</li>
-									<li>Refactorización de código</li>
-									<li>Documentación</li>
-									<li>Diagramador</li>
-								</ul>
-
-								<h2>Proyectos</h2>
-								<ul>
-									<li>Maquiver</li>
-									<li>Manitas Limpias</li>
-									<li>Ehecatl CRM</li>
-									<li>Batalla naval</li>
-									<li>Batalla naval</li>
-								</ul>
-							</div>
-						-->
-						<!--
-						<div class="col-lg-12" style="color: black">
-							Notas Woodpecker: Recuerda al menos mencionar
-
-								* El nombre de la aplicación.
-								* Lenguaje en el que esta desarollado.
-								* Finalidad del proyecto.
-								* Tiempo de experiencia.
-								* Aprendizaje aprendido.
-								* Tipo de caracter.
-
-
-							<h3>Ehecatl CRM</h3>
-							<label>Caracter: Laboral</label>
-							<p> manejador de recursos empresariales</p>
-
-
-							<h3>Maquiver</h3>
-							<label>Caracter: Laboral</label>
-							<p> es una aplicación web dedicada a la creacion o mantenimiento
-								la cual basa su sistema en un servidor PHP con el framework de codeigniter</p>
-
-							<h3>Signati Litteris</h3>
-							<label>Caracter: Escolar / Educativo</label>
-							<p> Es una aplicacion que se dedica a la firma electronica pdf validando y dando aval a que los documentos tienen validez con una firma electronica</p>
-
-							<h3>Batalla naval</h3>
-							<label>Caracter: Escolar / Educativo</label>
-							<p> Aplicación que tiene como finalidad la intencion de mostrar el funcionamiento de la conectividad entre aplicaciones de escritorio</p>
-
-							<h3>Manitas Limpias</h3>
-							<label>Caracter: Freelancer</label>
-							<p> Proyecto multidiciplinario trabajado para el ahora Maestro en Psicologia y Educación [Insertar el nombre al que le trabajamos]
-								con ayuda de una programadora
-							</p>
-						</div>
-						-->
-
-						<div class="container one-margin-top">
-							<div class="row float-right">
-								<button class="btn btn-light">
-									<a class="link" href="mailto:gomez.alejandre@gmail.com">Enviarme e-mail</a>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</body>
-
-
-	</html>
+          <aside class="side-column">
+            <section class="panel" id="skills-section"></section>
+            <section class="panel" id="certifications-section"></section>
+            <section class="panel" id="courses-section"></section>
+          </aside>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

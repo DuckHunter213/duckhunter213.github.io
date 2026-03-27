@@ -1,24 +1,29 @@
 [
-	{
-		"nombre"             : "Manitas limpias",
-		"tiempo_experiencia" : "6 meses",
-		"caracter"           : "Freelancer",
-		"lenguaje_principal" : "C#",
-		"framework"          : "Unity Game Development",
-		"descripcion"        : "Manitas limpias es un proyecto cuya finalidad era demostrar a los niños la importancia de lavarse las manos",
-	},{
-		"nombre"             : "Maquiver",
-		"tiempo_experiencia" : "5 Meses",
-		"caracter"           : "Laboral",
-		"lenguaje_principal" : "PHP / HTML / JavaSricpt",
-		"framework"          : "Unity Game Development",
-		"descripcion"        : "Manitas limpias es un proyecto cuya finalidad era demostrar a los niños la importancia de lavarse las manos",
-	},{
-		"nombre"             : "Signati Litteris",
-		"tiempo_experiencia" : "5 Meses",
-		"caracter"           : "Laboral",
-		"lenguaje_principal" : "PHP / HTML / JavaSricpt",
-		"framework"          : "Unity Game Development",
-		"descripcion"        : "Manitas limpias es un proyecto cuya finalidad era demostrar a los niños la importancia de lavarse las manos",
-	}
+  {
+    "name": "Maquiver",
+    "character": "Proyecto laboral",
+    "timeline": "5 meses",
+    "description": "Aplicacion web orientada a operaciones y mantenimiento. Buena referencia para mostrar experiencia en producto real y stack web clasico.",
+    "stack": ["PHP", "HTML", "JavaScript", "CodeIgniter"],
+    "audiences": ["fullstack", "backend", "frontend"],
+    "featuredFor": ["fullstack", "backend"]
+  },
+  {
+    "name": "Signati Litteris",
+    "character": "Proyecto laboral",
+    "timeline": "5 meses",
+    "description": "Trabajo relacionado con firma electronica y documentos PDF. Es util para resaltar contexto de negocio, integridad documental y responsabilidad tecnica.",
+    "stack": ["PHP", "HTML", "JavaScript", "PDF"],
+    "audiences": ["backend", "fullstack", "shared"],
+    "featuredFor": ["backend"]
+  },
+  {
+    "name": "Manitas Limpias",
+    "character": "Proyecto freelance",
+    "timeline": "6 meses",
+    "description": "Proyecto educativo para comunicar a ninos la importancia del lavado de manos mediante una experiencia interactiva desarrollada con Unity.",
+    "stack": ["C#", "Unity", "UX educativo"],
+    "audiences": ["gamedev", "fullstack", "shared"],
+    "featuredFor": ["gamedev"]
+  }
 ]

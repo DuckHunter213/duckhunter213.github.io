@@ -1,0 +1,26 @@
+{
+  "name": "Luis Fernando Gomez",
+  "lastNameAccent": "Alejandre",
+  "location": "Mexico | remoto e hibrido",
+  "email": "gomez.alejandre@gmail.com",
+  "github": "",
+  "linkedin": "",
+  "defaultAudience": "fullstack",
+  "highlights": [
+    "Experiencia en proyectos laborales, freelance y academicos.",
+    "Capacidad para mover el discurso tecnico segun la vacante objetivo.",
+    "Base web y experiencia con soluciones interactivas en C# y Unity."
+  ],
+  "headlines": {
+    "fullstack": "Software Engineer Full Stack",
+    "backend": "Software Engineer Backend",
+    "frontend": "Frontend Engineer",
+    "gamedev": "Developer C# / Unity"
+  },
+  "summaries": {
+    "fullstack": "Perfil orientado a construir y mantener soluciones completas, con mezcla de desarrollo web, entendimiento de negocio y entrega funcional de producto.",
+    "backend": "Perfil enfocado en logica de negocio, integracion de sistemas, mantenimiento de aplicaciones y trabajo con datos, procesos y servicios.",
+    "frontend": "Perfil enfocado en interfaces funcionales, experiencia de usuario y construccion de aplicaciones web conectadas a producto real.",
+    "gamedev": "Perfil enfocado en experiencias interactivas con Unity y C#, util para proyectos educativos, simulaciones o productos digitales gamificados."
+  }
+}
