@@ -9,7 +9,8 @@ const DATA_FILES = {
   methods: "metodologias.json",
   education: "estudios.json",
   certifications: "certificaciones.json",
-  courses: "cursos.json"
+  courses: "cursos.json",
+  social: "redes.json"
 };
 
 const SUPPORTED_LANGUAGES = ["es", "en"];
@@ -151,6 +152,7 @@ function bindEvents() {
 function render() {
   renderPageMeta();
   renderLanguageButtons();
+  renderSocial();
   renderHero();
   renderProfileButtons();
   renderExperience();
@@ -217,6 +219,27 @@ function renderLanguageButtons() {
   });
 }
 
+function renderSocial() {
+  const section = document.getElementById("social-panel");
+  section.hidden = true;
+}
+
+function socialCardHtml() {
+  const links = (state.data.social || []).filter(item => item.url);
+  if (!links.length) return "";
+  return `
+    <div class="hero-card">
+      <div class="social-bar">
+        ${links.map(item => `
+          <a class="social-link" href="${item.url}" target="_blank" rel="noreferrer">
+            ${item.label}
+          </a>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
 function renderHero() {
   const profile = state.data.profile;
   const activeHeadline = profile.headlines[state.audience] || profile.headlines[profile.defaultAudience];
@@ -244,7 +267,7 @@ function renderHero() {
           <li>${activeAudience.summary}</li>
           ${profile.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
         </ul>
-      </div>` : ""}
+      </div>` : socialCardHtml()}
     </div>
   `;
 }

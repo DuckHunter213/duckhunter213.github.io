@@ -1,0 +1,7 @@
+[
+  { "id": "github",    "label": "GitHub",    "url": "https://github.com/DuckHunter213" },
+  { "id": "linkedin",  "label": "LinkedIn",  "url": "https://www.linkedin.com/in/fernando-gomez-alejandre" },
+  { "id": "x",         "label": "X",         "url": "https://x.com/DARKENSES" },
+  { "id": "facebook",  "label": "Facebook",  "url": "https://www.facebook.com/DARKENSES" },
+  { "id": "whatsapp",  "label": "WhatsApp",  "url": "https://wa.me/522282229579" }
+]
