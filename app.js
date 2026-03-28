@@ -29,7 +29,7 @@ const UI_COPY = {
     heroCardTitle: "Lo que lee RH en este modo",
     experienceEyebrow: "Experiencia",
     experienceTitle: "Empresas y trayectoria",
-    experienceCopy: "Se prioriza lo mas cercano al perfil activo para facilitar el filtro de RH.",
+    experienceCopy: "Se prioriza lo mas cercaño al perfil activo para facilitar el filtro de RH.",
     projectsEyebrow: "Proyectos",
     projectsTitle: "Resultados y contexto tecnico",
     projectsCopy: "Cada proyecto incluye stack, caracter del trabajo y valor para reclutamiento.",
@@ -119,6 +119,13 @@ async function init() {
 }
 
 function bindEvents() {
+  document.getElementById("ats-link").addEventListener("click", () => {
+    const url = new URL("ats.html", window.location.href);
+    url.searchParams.set("lang", state.language);
+    url.searchParams.set("perfil", state.audience);
+    window.open(url.toString(), "_blank");
+  });
+
   const shareButton = document.getElementById("share-profile-link");
 
   shareButton.addEventListener("click", async () => {
@@ -152,10 +159,17 @@ function render() {
   renderSkills();
   renderSimpleSection("certifications-section", t("certificationsTitle"), state.data.certifications, certificationTemplate);
   renderSimpleSection("courses-section", t("coursesTitle"), state.data.courses, courseTemplate);
-  document.getElementById("share-profile-link").textContent = t("copyLink");
-  document.querySelector(".panel .eyebrow").textContent = t("adaptable");
-  document.querySelector(".panel h2").textContent = t("focusTitle");
-  document.querySelector(".panel .panel-copy").textContent = t("focusCopy");
+
+  const debugPanel = document.getElementById("debug-panel");
+  debugPanel.hidden = !isDebugMode();
+
+  if (isDebugMode()) {
+    document.getElementById("share-profile-link").textContent = t("copyLink");
+    document.querySelector("#debug-panel .eyebrow").textContent = t("adaptable");
+    document.querySelector("#debug-panel h2").textContent = t("focusTitle");
+    document.querySelector("#debug-panel .panel-copy").textContent = t("focusCopy");
+  }
+
 }
 
 function renderPageMeta() {
@@ -223,13 +237,14 @@ function renderHero() {
           ${profile.linkedin ? pill(`<a href="${profile.linkedin}" target="_blank" rel="noreferrer">LinkedIn</a>`) : ""}
         </div>
       </div>
+      ${isDebugMode() ? `
       <div class="hero-card">
         <h2>${t("heroCardTitle")}</h2>
         <ul class="compact-list">
           <li>${activeAudience.summary}</li>
           ${profile.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
         </ul>
-      </div>
+      </div>` : ""}
     </div>
   `;
 }
@@ -269,6 +284,15 @@ function renderExperience() {
   const section = document.getElementById("experience-section");
   const items = prioritizeByAudience(state.data.experience);
 
+  if (!items.length) {
+    section.hidden = true;
+    section.innerHTML = "";
+    return;
+  }
+
+  const groups = groupExperienceByCompany(items);
+
+  section.hidden = false;
   section.innerHTML = `
     <div class="section-title">
       <div>
@@ -278,15 +302,41 @@ function renderExperience() {
       </div>
     </div>
     <div class="timeline">
-      ${items.map(experienceTemplate).join("")}
+      ${groups.map(({ company, roles }) =>
+        roles.length === 1
+          ? experienceTemplate(roles[0])
+          : experienceGroupTemplate(company, roles)
+      ).join("")}
     </div>
   `;
+}
+
+function groupExperienceByCompany(items) {
+  const order = [];
+  const map = {};
+
+  items.forEach((item) => {
+    if (!map[item.company]) {
+      map[item.company] = [];
+      order.push(item.company);
+    }
+    map[item.company].push(item);
+  });
+
+  return order.map((company) => ({ company, roles: map[company] }));
 }
 
 function renderProjects() {
   const section = document.getElementById("projects-section");
   const items = prioritizeByAudience(state.data.projects);
 
+  if (!items.length) {
+    section.hidden = true;
+    section.innerHTML = "";
+    return;
+  }
+
+  section.hidden = false;
   section.innerHTML = `
     <div class="section-title">
       <div>
@@ -357,6 +407,7 @@ function renderSkills() {
     }
   ];
 
+  section.hidden = false;
   section.innerHTML = `
     <div class="section-title">
       <div>
@@ -420,6 +471,34 @@ function experienceTemplate(item) {
         <span class="tag">${item.type}</span>
         <span class="tag">${item.duration}</span>
         ${item.stack.map((stack) => `<span class="tag">${stack}</span>`).join("")}
+      </div>
+    </article>
+  `;
+}
+
+function experienceGroupTemplate(company, roles) {
+  const start = roles[roles.length - 1].start;
+  const end = roles[0].end;
+  return `
+    <article class="entry entry-group reveal">
+      <div class="entry-header">
+        <h3>${company}</h3>
+        <span class="entry-date">${start} - ${end}</span>
+      </div>
+      <div class="entry-roles">
+        ${roles.map((role) => `
+          <div class="entry-role">
+            <div class="entry-role-header">
+              <span class="entry-role-title">${role.role}</span>
+              <span class="entry-date">${role.start} - ${role.end}</span>
+            </div>
+            <p>${role.summary}</p>
+            <div class="tag-row">
+              <span class="tag">${role.duration}</span>
+              ${role.stack.map((s) => `<span class="tag">${s}</span>`).join("")}
+            </div>
+          </div>
+        `).join("")}
       </div>
     </article>
   `;
@@ -526,6 +605,10 @@ function sortByFeatured(left, right) {
 
 function getAudienceFromUrl() {
   return new URLSearchParams(window.location.search).get("perfil");
+}
+
+function isDebugMode() {
+  return new URLSearchParams(window.location.search).get("debug") === "true";
 }
 
 function getLanguageFromUrl() {

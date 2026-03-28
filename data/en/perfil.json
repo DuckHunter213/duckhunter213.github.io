@@ -7,9 +7,9 @@
   "linkedin": "",
   "defaultAudience": "fullstack",
   "highlights": [
-    "Experience across product, freelance, and academic projects.",
-    "Able to reposition the technical narrative based on the target role.",
-    "Web foundation plus hands-on work with interactive solutions in C# and Unity."
+    "7 years of software development experience across professional, freelance, and academic projects.",
+    "Hands-on work with legacy code, migrations, and real production environments.",
+    "Experience in multidisciplinary teams and development of web and interactive applications with C# and Unity."
   ],
   "headlines": {
     "fullstack": "Software Engineer Full Stack",
@@ -18,9 +18,9 @@
     "gamedev": "Developer C# / Unity"
   },
   "summaries": {
-    "fullstack": "Profile focused on building and maintaining end-to-end solutions, combining web development, business understanding, and functional product delivery.",
-    "backend": "Profile focused on business logic, system integration, application maintenance, and work around data, processes, and services.",
-    "frontend": "Profile focused on functional interfaces, user experience, and web applications connected to real product needs.",
-    "gamedev": "Profile focused on interactive experiences with Unity and C#, useful for educational projects, simulations, or gamified digital products."
+    "fullstack": "Developer with 7 years of experience building and maintaining web applications end to end. I've worked in professional environments with legacy code and internal CRMs, and on personal projects where I own every layer of the stack.",
+    "backend": "Developer focused on business logic, system integration, and application maintenance. Experience with databases, migrations, APIs, and services in real production environments.",
+    "frontend": "Developer with a solid web foundation, focused on building functional interfaces tied to real product needs. I care as much about the visual detail as the logic behind it.",
+    "gamedev": "Developer with Unity and C# experience applied to interactive projects with purpose. I've worked in multidisciplinary teams combining game logic, UX, and concrete communication or learning goals."
   }
 }

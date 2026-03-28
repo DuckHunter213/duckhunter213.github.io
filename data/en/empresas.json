@@ -1,12 +1,60 @@
 [
   {
+    "company": "Oracle",
+    "role": "Solutions Architect",
+    "start": "Sept. 2024",
+    "end": "Present",
+    "duration": "1 year 7 months",
+    "type": "Laboral",
+    "summary": "Led CI/CD pipeline improvements, refactored outdated components, and integrated AI capabilities into the product. Designed team-wide development standards for a distributed team of 19 engineers across Mexico and India, enabling seamless code integration and a more stable development workflow.",
+    "stack": ["JavaScript", "Node.js", "Oracle JET", "CI/CD", "Python", "AI"],
+    "audiences": ["fullstack", "backend", "shared"],
+    "featuredFor": ["fullstack", "backend"]
+  },
+  {
+    "company": "Oracle",
+    "role": "Senior Consultant",
+    "start": "Sept. 2022",
+    "end": "Sept. 2024",
+    "duration": "2 years 1 month",
+    "type": "Laboral",
+    "summary": "Developed new features, reviewed code in PRs, and resolved bugs within an active product team. Maintained high technical standards while collaborating closely with a co-located team in India.",
+    "stack": ["JavaScript", "Python", "Oracle JET", "Node.js", "MySQL"],
+    "audiences": ["fullstack", "backend", "frontend", "shared"],
+    "featuredFor": ["fullstack", "backend", "frontend"]
+  },
+  {
+    "company": "Oracle",
+    "role": "Staff Consultant",
+    "start": "Jul. 2021",
+    "end": "Sept. 2022",
+    "duration": "1 year 3 months",
+    "type": "Laboral",
+    "summary": "Migrated a legacy PHP application to Oracle JET, an in-house Oracle framework built on JavaScript with a reactive architecture using Knockout.js. Full-stack work across Node.js and MySQL.",
+    "stack": ["JavaScript", "Oracle JET", "Knockout.js", "Node.js", "MySQL", "PHP"],
+    "audiences": ["fullstack", "frontend", "backend", "shared"],
+    "featuredFor": ["fullstack", "frontend"]
+  },
+  {
+    "company": "Hutchison Ports ICAVE",
+    "role": "Software Analyst",
+    "start": "Feb. 2020",
+    "end": "Jul. 2021",
+    "duration": "1 year 6 months",
+    "type": "Laboral",
+    "summary": "Maintained and developed features for CTS (Container Terminal System), a management system for a maritime container terminal. Bridged yard logistics with administrative and billing processes. Responsible for PL/SQL script maintenance and Oracle Forms development.",
+    "stack": ["PL/SQL", "Oracle Forms", "Oracle DB", "Git"],
+    "audiences": ["fullstack", "backend", "shared"],
+    "featuredFor": ["backend"]
+  },
+  {
     "company": "Ehecatl Software Services",
     "role": "Ingeniero de Software Jr.",
     "start": "2018",
     "end": "2019",
-    "duration": "1 ano aprox.",
+    "duration": "1 año aprox.",
     "type": "Laboral",
-    "summary": "Participacion en desarrollo de software y mantenimiento de soluciones empresariales con enfoque full stack y entrega funcional.",
+    "summary": "Feature development and bug fixing on a legacy PHP system. Contributed to the evolution of the company's internal CRM, working with Entity Framework, database migrations, and Azure deployments.",
     "stack": ["PHP", "JavaScript", "CodeIgniter", "MySQL"],
     "audiences": ["fullstack", "backend", "shared"],
     "featuredFor": ["fullstack", "backend"]
@@ -18,7 +66,7 @@
     "end": "2019",
     "duration": "6 meses",
     "type": "Freelance",
-    "summary": "Desarrollo de soluciones a medida con contacto directo con cliente, levantamiento de requerimientos y entrega iterativa.",
+    "summary": "Built custom projects with direct client contact. Gathered requirements, made technical decisions, and delivered complete products end to end.",
     "stack": ["C#", "Unity", "HTML", "JavaScript"],
     "audiences": ["fullstack", "frontend", "gamedev", "shared"],
     "featuredFor": ["gamedev", "frontend"]
@@ -28,9 +76,9 @@
     "role": "Servicio Social",
     "start": "2018",
     "end": "2019",
-    "duration": "1 ano",
+    "duration": "1 año",
     "type": "Academico",
-    "summary": "Apoyo en proyectos institucionales y experiencia temprana en trabajo con procesos, usuarios y documentacion tecnica.",
+    "summary": "Collaborated on internal university projects. First formal work experience, with direct contact with end users, technical documentation, and team collaboration.",
     "stack": ["Documentacion", "Soporte", "Trabajo colaborativo"],
     "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
   }

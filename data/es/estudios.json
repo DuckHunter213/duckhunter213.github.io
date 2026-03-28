@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "program": "Ingenieria en Software",
+    "institution": "Universidad Veracruzana",
+    "start": "2014",
+    "end": "2018",
+    "description": "Formacion en desarrollo de software, estructuras de datos, bases de datos, redes y fundamentos de ingenieria aplicados a la construccion de sistemas.",
+    "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
+  }
+]

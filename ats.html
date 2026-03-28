@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Luis Fernando Gomez Alejandre</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11pt;
+        color: #111;
+        background: #fff;
+        padding: 32px 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* ---- toolbar (se oculta al imprimir) ---- */
+      .toolbar {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+        margin-bottom: 24px;
+      }
+
+      .toolbar button, .toolbar select {
+        font-family: inherit;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #f5f5f5;
+        cursor: pointer;
+      }
+
+      .toolbar button:hover { background: #e8e8e8; }
+
+      /* ---- cabecera ---- */
+      #ats-header { margin-bottom: 20px; border-bottom: 2px solid #111; padding-bottom: 12px; }
+      #ats-header h1 { font-size: 20pt; }
+      #ats-header .role { font-size: 12pt; color: #333; margin-top: 4px; }
+      #ats-header .meta { margin-top: 8px; font-size: 9.5pt; color: #444; }
+      #ats-header .meta span + span::before { content: " · "; }
+
+      /* ---- resumen ---- */
+      #ats-summary { margin-bottom: 20px; }
+      #ats-summary p { line-height: 1.6; }
+
+      /* ---- secciones ---- */
+      .ats-section { margin-bottom: 20px; }
+      .ats-section h2 {
+        font-size: 11pt;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border-bottom: 1px solid #bbb;
+        padding-bottom: 4px;
+        margin-bottom: 12px;
+      }
+
+      /* ---- entradas ---- */
+      .ats-entry { margin-bottom: 14px; }
+      .ats-entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px;
+      }
+      .ats-entry-header strong { font-size: 11pt; }
+      .ats-entry-header span { font-size: 9.5pt; color: #555; white-space: nowrap; }
+      .ats-entry .subtitle { font-size: 10pt; color: #333; margin: 2px 0 5px; }
+      .ats-entry p { line-height: 1.55; color: #222; }
+      .ats-entry .stack { margin-top: 5px; font-size: 9pt; color: #444; }
+
+      /* ---- grupo empresa (Oracle) ---- */
+      .ats-group-company {
+        font-size: 11pt;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      .ats-group-role { margin-bottom: 10px; padding-left: 14px; border-left: 2px solid #ccc; }
+      .ats-group-role .role-name { font-weight: bold; font-size: 10.5pt; }
+
+      /* ---- habilidades ---- */
+      .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+      .skill-group strong { display: block; font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 3px; }
+      .skill-group span { font-size: 10pt; }
+
+      /* ---- print ---- */
+      @media print {
+        body { padding: 0; font-size: 10.5pt; }
+        .toolbar { display: none; }
+        a { color: inherit; text-decoration: none; }
+        .ats-section { page-break-inside: avoid; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar" id="toolbar">
+      <select id="lang-select">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+      </select>
+      <select id="profile-select"></select>
+      <button onclick="window.print()">Imprimir / Guardar PDF</button>
+    </div>
+
+    <div id="ats-header"></div>
+    <div id="ats-summary"></div>
+    <div id="ats-content"></div>
+
+    <script>
+      const DATA_FILES = {
+        profile: "perfil.json",
+        audiences: "perfiles.json",
+        experience: "empresas.json",
+        projects: "proyectos.json",
+        languages: "Lenguajes.json",
+        frameworks: "frameworks.json",
+        tools: "herramientas.json",
+        methods: "metodologias.json",
+        education: "estudios.json",
+        certifications: "certificaciones.json",
+        courses: "cursos.json"
+      };
+
+      const state = { language: "es", audience: null, data: null };
+
+      document.addEventListener("DOMContentLoaded", init);
+
+      async function init() {
+        state.language = new URLSearchParams(location.search).get("lang") || "es";
+        const audienceParam = new URLSearchParams(location.search).get("perfil");
+
+        const entries = await Promise.all(
+          Object.entries(DATA_FILES).map(async ([key, file]) => {
+            const res = await fetch(`data/${state.language}/${file}`);
+            return [key, await res.json()];
+          })
+        );
+        state.data = Object.fromEntries(entries);
+        state.audience = audienceParam || state.data.profile.defaultAudience;
+
+        setupToolbar();
+        render();
+      }
+
+      function setupToolbar() {
+        const langSelect = document.getElementById("lang-select");
+        langSelect.value = state.language;
+        langSelect.addEventListener("change", async () => {
+          state.language = langSelect.value;
+          const url = new URL(location.href);
+          url.searchParams.set("lang", state.language);
+          url.searchParams.set("perfil", state.audience);
+          history.replaceState({}, "", url);
+          const entries = await Promise.all(
+            Object.entries(DATA_FILES).map(async ([key, file]) => {
+              const res = await fetch(`data/${state.language}/${file}`);
+              return [key, await res.json()];
+            })
+          );
+          state.data = Object.fromEntries(entries);
+          setupProfileSelect();
+          render();
+        });
+
+        setupProfileSelect();
+      }
+
+      function setupProfileSelect() {
+        const profileSelect = document.getElementById("profile-select");
+        profileSelect.innerHTML = state.data.audiences
+          .map(a => `<option value="${a.id}" ${a.id === state.audience ? "selected" : ""}>${a.label}</option>`)
+          .join("");
+        profileSelect.addEventListener("change", () => {
+          state.audience = profileSelect.value;
+          const url = new URL(location.href);
+          url.searchParams.set("perfil", state.audience);
+          history.replaceState({}, "", url);
+          render();
+        });
+      }
+
+      function render() {
+        const p = state.data.profile;
+        const headline = p.headlines[state.audience] || p.headlines[p.defaultAudience];
+        const summary = p.summaries[state.audience] || p.summaries[p.defaultAudience];
+
+        document.getElementById("ats-header").innerHTML = `
+          <h1>${p.name} ${p.lastNameAccent}</h1>
+          <div class="role">${headline}</div>
+          <div class="meta">
+            <span>${p.location}</span>
+            <span><a href="mailto:${p.email}">${p.email}</a></span>
+            ${p.github ? `<span>${p.github}</span>` : ""}
+            ${p.linkedin ? `<span>${p.linkedin}</span>` : ""}
+          </div>
+        `;
+
+        document.getElementById("ats-summary").innerHTML = `<p>${summary}</p>`;
+
+        const experience = sortByAudience(state.data.experience);
+        const groups = groupByCompany(experience);
+
+        const education = sortByAudience(state.data.education);
+        const certifications = sortByAudience(state.data.certifications);
+        const projects = sortByAudience(state.data.projects);
+
+        const allSkills = [
+          ...state.data.languages,
+          ...state.data.frameworks,
+          ...state.data.tools,
+          ...state.data.methods
+        ];
+
+        document.getElementById("ats-content").innerHTML = `
+          ${section(state.language === "es" ? "Experiencia" : "Experience", groups.map(({ company, roles }) =>
+            roles.length === 1 ? entryHtml(roles[0]) : groupHtml(company, roles)
+          ).join(""))}
+
+          ${projects.length ? section(state.language === "es" ? "Proyectos" : "Projects", projects.map(projectHtml).join("")) : ""}
+
+          ${education.length ? section(state.language === "es" ? "Educacion" : "Education", education.map(educationHtml).join("")) : ""}
+
+          ${certifications.length ? section(state.language === "es" ? "Certificaciones" : "Certifications", certifications.map(certHtml).join("")) : ""}
+
+          ${skillsSection(state.data)}
+        `;
+      }
+
+      function section(title, content) {
+        return `<div class="ats-section"><h2>${title}</h2>${content}</div>`;
+      }
+
+      function entryHtml(item) {
+        return `
+          <div class="ats-entry">
+            <div class="ats-entry-header">
+              <strong>${item.role || item.name || item.program}</strong>
+              <span>${item.start} - ${item.end}</span>
+            </div>
+            <div class="subtitle">${item.company || item.institution || item.character || ""}</div>
+            <p>${item.summary || item.description || ""}</p>
+            ${item.stack ? `<div class="stack">${item.stack.join(" · ")}</div>` : ""}
+          </div>
+        `;
+      }
+
+      function groupHtml(company, roles) {
+        return `
+          <div class="ats-entry">
+            <div class="ats-group-company">${company}</div>
+            ${roles.map(role => `
+              <div class="ats-group-role">
+                <div class="ats-entry-header">
+                  <span class="role-name">${role.role}</span>
+                  <span>${role.start} - ${role.end}</span>
+                </div>
+                <p>${role.summary}</p>
+                <div class="stack">${role.stack.join(" · ")}</div>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function projectHtml(item) {
+        return `
+          <div class="ats-entry">
+            <div class="ats-entry-header">
+              <strong>${item.name}</strong>
+              <span>${item.timeline}</span>
+            </div>
+            <div class="subtitle">${item.character}</div>
+            <p>${item.description}</p>
+            ${item.stack ? `<div class="stack">${item.stack.join(" · ")}</div>` : ""}
+          </div>
+        `;
+      }
+
+      function educationHtml(item) {
+        return `
+          <div class="ats-entry">
+            <div class="ats-entry-header">
+              <strong>${item.program}</strong>
+              <span>${item.start} - ${item.end}</span>
+            </div>
+            <div class="subtitle">${item.institution}</div>
+            <p>${item.description}</p>
+          </div>
+        `;
+      }
+
+      function certHtml(item) {
+        return `
+          <div class="ats-entry">
+            <div class="ats-entry-header">
+              <strong>${item.name}</strong>
+              <span>${item.year}</span>
+            </div>
+            <div class="subtitle">${item.issuer}</div>
+            <p>${item.description}</p>
+          </div>
+        `;
+      }
+
+      function skillsSection(data) {
+        const groups = [
+          { label: state.language === "es" ? "Lenguajes" : "Languages", items: data.languages, field: "name" },
+          { label: "Frameworks", items: data.frameworks, field: "name" },
+          { label: state.language === "es" ? "Herramientas" : "Tools", items: data.tools, field: "name" },
+          { label: state.language === "es" ? "Metodologias" : "Methodologies", items: data.methods, field: "name" }
+        ].filter(g => g.items.length);
+
+        if (!groups.length) return "";
+
+        return section(
+          state.language === "es" ? "Habilidades tecnicas" : "Technical skills",
+          `<div class="skills-grid">
+            ${groups.map(g => `
+              <div class="skill-group">
+                <strong>${g.label}</strong>
+                <span>${g.items.map(i => i[g.field]).join(", ")}</span>
+              </div>
+            `).join("")}
+          </div>`
+        );
+      }
+
+      function sortByAudience(items) {
+        return [...items].sort((a, b) => score(b) - score(a));
+      }
+
+      function score(item) {
+        if (!item.audiences) return 0;
+        if (item.audiences.includes(state.audience)) return 3;
+        if (item.audiences.includes("shared")) return 1;
+        return 0;
+      }
+
+      function groupByCompany(items) {
+        const order = [];
+        const map = {};
+        items.forEach(item => {
+          if (!map[item.company]) { map[item.company] = []; order.push(item.company); }
+          map[item.company].push(item);
+        });
+        return order.map(company => ({ company, roles: map[company] }));
+      }
+    </script>
+  </body>
+</html>

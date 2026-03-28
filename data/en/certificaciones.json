@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "name": "Fire Fighting",
+    "issuer": "Grupo Avisa",
+    "year": "2023",
+    "description": "DC-3 certification in fire prevention and firefighting techniques. Part of a civil protection brigade program."
+  },
+  {
+    "name": "Search and Rescue",
+    "issuer": "Grupo Avisa",
+    "year": "2023",
+    "description": "DC-3 certification in search and rescue techniques for emergency situations. Part of a civil protection brigade program."
+  },
+  {
+    "name": "First Aid",
+    "issuer": "Grupo Avisa",
+    "year": "2024",
+    "description": "DC-3 certification in first aid response. Part of a civil protection brigade program."
+  }
+]

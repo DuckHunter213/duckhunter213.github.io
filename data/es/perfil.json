@@ -7,9 +7,9 @@
   "linkedin": "",
   "defaultAudience": "fullstack",
   "highlights": [
-    "Experiencia en proyectos laborales, freelance y academicos.",
-    "Capacidad para mover el discurso tecnico segun la vacante objetivo.",
-    "Base web y experiencia con soluciones interactivas en C# y Unity."
+    "7 años de experiencia en desarrollo de software entre entornos laborales, freelance y academicos.",
+    "Trabajo con legacy code, migraciones y entregas reales con impacto directo en negocio.",
+    "Experiencia en equipos multidisciplinarios y desarrollo de aplicaciones web e interactivas con C# y Unity."
   ],
   "headlines": {
     "fullstack": "Software Engineer Full Stack",
@@ -18,9 +18,9 @@
     "gamedev": "Developer C# / Unity"
   },
   "summaries": {
-    "fullstack": "Perfil orientado a construir y mantener soluciones completas, con mezcla de desarrollo web, entendimiento de negocio y entrega funcional de producto.",
-    "backend": "Perfil enfocado en logica de negocio, integracion de sistemas, mantenimiento de aplicaciones y trabajo con datos, procesos y servicios.",
-    "frontend": "Perfil enfocado en interfaces funcionales, experiencia de usuario y construccion de aplicaciones web conectadas a producto real.",
-    "gamedev": "Perfil enfocado en experiencias interactivas con Unity y C#, util para proyectos educativos, simulaciones o productos digitales gamificados."
+    "fullstack": "Desarrollador con 7 años de experiencia construyendo y manteniendo aplicaciones web de extremo a extremo. He trabajado en entornos laborales con legacy code y CRMs internos, y en proyectos propios donde asumo todas las capas del desarrollo.",
+    "backend": "Desarrollador con enfoque en logica de negocio, integracion de sistemas y mantenimiento de aplicaciones. Experiencia trabajando con bases de datos, migraciones, APIs y servicios en entornos reales de produccion.",
+    "frontend": "Desarrollador con base solida en la web, enfocado en construir interfaces funcionales y conectadas a necesidades reales de producto. Me interesa el detalle visual tanto como la logica que lo sostiene.",
+    "gamedev": "Desarrollador con experiencia en Unity y C# aplicada a proyectos interactivos con proposito. He trabajado en equipos multidisciplinarios combinando logica de juego, UX y objetivos concretos de comunicacion o aprendizaje."
   }
 }

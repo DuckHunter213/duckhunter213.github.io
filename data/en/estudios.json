@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "program": "Bachelor's in Software Engineering",
+    "institution": "Universidad Veracruzana",
+    "start": "2014",
+    "end": "2018",
+    "description": "Degree focused on software development, data structures, databases, networking, and engineering principles applied to building real systems.",
+    "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
+  }
+]

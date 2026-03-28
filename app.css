@@ -409,6 +409,51 @@ body::before {
   font-size: 0.84rem;
 }
 
+.entry-group > .entry-header {
+  margin-bottom: 16px;
+}
+
+.entry-roles {
+  display: grid;
+  gap: 0;
+  border-left: 2px solid var(--accent-soft);
+  margin-left: 6px;
+}
+
+.entry-role {
+  padding: 14px 0 14px 20px;
+  position: relative;
+}
+
+.entry-role + .entry-role {
+  border-top: 1px solid var(--line);
+}
+
+.entry-role::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--surface-strong);
+}
+
+.entry-role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.entry-role-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 .empty-state {
   padding: 18px;
   border-radius: var(--radius-md);

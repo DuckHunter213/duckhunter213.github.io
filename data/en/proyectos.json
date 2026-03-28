@@ -3,7 +3,7 @@
     "name": "Maquiver",
     "character": "Proyecto laboral",
     "timeline": "5 meses",
-    "description": "Aplicacion web orientada a operaciones y mantenimiento. Buena referencia para mostrar experiencia en producto real y stack web clasico.",
+    "description": "Web system for a mechanical parts company. Managed work orders, inventory control, requisitions, and client tracking.",
     "stack": ["PHP", "HTML", "JavaScript", "CodeIgniter"],
     "audiences": ["fullstack", "backend", "frontend"],
     "featuredFor": ["fullstack", "backend"]
@@ -12,7 +12,7 @@
     "name": "Signati Litteris",
     "character": "Proyecto laboral",
     "timeline": "5 meses",
-    "description": "Trabajo relacionado con firma electronica y documentos PDF. Es util para resaltar contexto de negocio, integridad documental y responsabilidad tecnica.",
+    "description": "Academic project focused on official document validation using digital certificates and electronic signatures, similar to the model used in electronic invoicing.",
     "stack": ["PHP", "HTML", "JavaScript", "PDF"],
     "audiences": ["backend", "fullstack", "shared"],
     "featuredFor": ["backend"]
@@ -21,7 +21,7 @@
     "name": "Manitas Limpias",
     "character": "Proyecto freelance",
     "timeline": "6 meses",
-    "description": "Proyecto educativo para comunicar a ninos la importancia del lavado de manos mediante una experiencia interactiva desarrollada con Unity.",
+    "description": "App developed for a psychology master's student to demonstrate the potential of gamification as a learning tool for children. Built in a multidisciplinary team with a psychologist, programmers, and a graphic designer.",
     "stack": ["C#", "Unity", "UX educativo"],
     "audiences": ["gamedev", "fullstack", "shared"],
     "featuredFor": ["gamedev"]

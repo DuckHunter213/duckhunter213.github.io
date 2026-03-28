@@ -21,7 +21,7 @@
     <div class="page-shell">
       <main class="page">
         <section class="hero" id="hero"></section>
-        <section class="panel">
+        <section class="panel" id="debug-panel" hidden>
           <div class="panel-header">
             <div>
               <p class="eyebrow">CV adaptable</p>
@@ -34,23 +34,26 @@
               Copiar link del perfil
             </button>
           </div>
+        </section>
+        <section class="panel" id="profile-panel">
           <div class="toolbar-row">
             <div class="language-switcher" id="language-switcher"></div>
+            <button class="ghost-button" id="ats-link" type="button">Descargar CV (ATS)</button>
           </div>
           <div class="profile-switcher" id="profile-switcher"></div>
         </section>
 
         <section class="grid">
           <div class="main-column">
-            <section class="panel" id="experience-section"></section>
-            <section class="panel" id="projects-section"></section>
-            <section class="panel" id="education-section"></section>
+            <section class="panel" id="experience-section" hidden></section>
+            <section class="panel" id="projects-section" hidden></section>
+            <section class="panel" id="education-section" hidden></section>
           </div>
 
           <aside class="side-column">
-            <section class="panel" id="skills-section"></section>
-            <section class="panel" id="certifications-section"></section>
-            <section class="panel" id="courses-section"></section>
+            <section class="panel" id="skills-section" hidden></section>
+            <section class="panel" id="certifications-section" hidden></section>
+            <section class="panel" id="courses-section" hidden></section>
           </aside>
         </section>
       </main>
