@@ -1,27 +1,27 @@
 [
   {
     "name": "Git",
-    "focus": "Versionamiento",
+    "focus": "Version Control",
     "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
   },
   {
     "name": "Visual Studio",
-    "focus": "Desarrollo C#",
+    "focus": "C# Development",
     "audiences": ["gamedev", "backend"]
   },
   {
     "name": "VS Code",
-    "focus": "Desarrollo web",
+    "focus": "Web Development",
     "audiences": ["frontend", "fullstack", "backend", "shared"]
   },
   {
     "name": "MySQL",
-    "focus": "Base de datos",
+    "focus": "Database",
     "audiences": ["backend", "fullstack", "shared"]
   },
   {
     "name": "SQL Server",
-    "focus": "Base de datos",
+    "focus": "Database",
     "audiences": ["backend", "shared"]
   }
 ]

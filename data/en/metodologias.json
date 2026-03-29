@@ -1,12 +1,12 @@
 [
   {
     "name": "Scrum",
-    "focus": "Trabajo iterativo",
+    "focus": "Iterative Workflow",
     "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
   },
   {
     "name": "ICONIX",
-    "focus": "Analisis y modelado",
+    "focus": "Analysis and Modeling",
     "audiences": ["backend", "fullstack", "shared"]
   }
 ]

@@ -1,47 +1,42 @@
 [
   {
     "name": "Angular",
-    "focus": "Interfaces SPA",
+    "focus": "SPA Interfaces",
     "audiences": ["frontend", "fullstack"]
   },
   {
     "name": "jQuery",
-    "focus": "Integracion rapida",
+    "focus": "Quick Integration",
     "audiences": ["frontend", "fullstack", "shared"]
   },
   {
     "name": "Unity",
-    "focus": "Experiencias interactivas",
+    "focus": "Interactive Experiences",
     "audiences": ["gamedev", "shared"]
   },
   {
     "name": "CodeIgniter",
-    "focus": "Aplicaciones PHP",
+    "focus": "PHP Applications",
     "audiences": ["backend", "fullstack", "shared"]
   },
   {
     "name": "Laravel",
-    "focus": "Backend y APIs",
+    "focus": "Backend and APIs",
     "audiences": ["backend", "fullstack"]
   },
   {
     "name": "Node.js",
-    "focus": "Servicios y tooling",
+    "focus": "Services and Tooling",
     "audiences": ["backend", "fullstack"]
   },
   {
     "name": "Bootstrap",
-    "focus": "Prototipado UI",
+    "focus": "UI Prototyping",
     "audiences": ["frontend", "fullstack"]
   },
   {
-    "name": "Bulma",
-    "focus": "Componentes CSS",
-    "audiences": ["frontend"]
-  },
-  {
     "name": "WPF",
-    "focus": "Desktop en C#",
+    "focus": "Desktop C#",
     "audiences": ["gamedev", "backend"]
   }
 ]

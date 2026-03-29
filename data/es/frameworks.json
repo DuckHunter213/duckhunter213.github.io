@@ -35,11 +35,6 @@
     "audiences": ["frontend", "fullstack"]
   },
   {
-    "name": "Bulma",
-    "focus": "Componentes CSS",
-    "audiences": ["frontend"]
-  },
-  {
     "name": "WPF",
     "focus": "Desktop en C#",
     "audiences": ["gamedev", "backend"]

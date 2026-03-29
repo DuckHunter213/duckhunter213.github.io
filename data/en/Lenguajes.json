@@ -1,47 +1,47 @@
 [
   {
     "name": "C#",
-    "level": "Fuerte",
+    "level": "Strong",
     "audiences": ["gamedev", "backend", "shared"]
   },
   {
     "name": "PHP",
-    "level": "Fuerte",
+    "level": "Strong",
     "audiences": ["backend", "fullstack", "shared"]
   },
   {
     "name": "JavaScript",
-    "level": "Fuerte",
+    "level": "Strong",
     "audiences": ["frontend", "fullstack", "shared"]
   },
   {
     "name": "HTML",
-    "level": "Avanzado",
+    "level": "Advanced",
     "audiences": ["frontend", "fullstack"]
   },
   {
     "name": "CSS",
-    "level": "Avanzado",
+    "level": "Advanced",
     "audiences": ["frontend", "fullstack"]
   },
   {
     "name": "Python",
-    "level": "Intermedio",
+    "level": "Intermediate",
     "audiences": ["backend"]
   },
   {
     "name": "Java",
-    "level": "Intermedio",
+    "level": "Intermediate",
     "audiences": ["backend"]
   },
   {
     "name": "C++",
-    "level": "Intermedio",
+    "level": "Intermediate",
     "audiences": ["gamedev"]
   },
   {
     "name": "SQL",
-    "level": "Aplicado en proyectos",
+    "level": "Applied in projects",
     "audiences": ["backend", "fullstack", "shared"]
   }
 ]

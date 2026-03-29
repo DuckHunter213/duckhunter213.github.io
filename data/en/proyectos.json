@@ -1,17 +1,62 @@
 [
   {
+    "name": "Service Operation Portal (SOP)",
+    "character": "Professional Projects",
+    "timeline": "5 Years",
+    "description": "Development and maintenance of SOP, an observability platform for 3G/4G/5G networks, migrated from Grafana to Oracle JET as the frontend framework. The project leverages a robust technology stack on Oracle OCI with automated CI/CD pipelines, and over the past year, Artificial Intelligence features were integrated to enhance platform analytics and monitoring capabilities.",
+    "stack": ["HTML", "JavaScript", "Node.js", "MySQL", "Oracle JET", "Python", "CI/CD"],
+    "audiences": ["fullstack", "backend", "frontend"],
+    "featuredFor": ["fullstack", "backend"]
+  },
+  {
+    "name": "UcaaS – Unified Communication as a Service",
+    "character": "Professional Projects",
+    "timeline": "3 Years",
+    "description": "Integration platform connecting enterprise communication tools such as Microsoft Teams with Oracle SBC (Session Border Controller) infrastructure. Enabled cross-system call data visibility within Oracle applications, bridging telephony and collaboration layers. PowerShell scripts were used for configuration automation and deployment tasks across the SBC environment.",
+    "stack": ["HTML", "JavaScript", "Node.js", "MySQL", "Oracle JET", "PowerShell"],
+    "audiences": ["fullstack", "backend"],
+    "featuredFor": ["fullstack", "backend"]
+  },
+  {
+    "name": "SBC Automation",
+    "character": "Professional Projects",
+    "timeline": "2 Years",
+    "description": "Platform for centralized replication and management of network configurations across multiple Oracle SBC nodes. Functioned as an orchestration layer analogous to Kubernetes, but scoped to SBC platform administration. A Java/Spring Boot backend handled the configuration distribution logic, while the frontend and API layer extended the existing SOP stack.",
+    "stack": ["HTML", "JavaScript", "Node.js", "MySQL", "Oracle JET", "Java", "Spring Boot"],
+    "audiences": ["fullstack", "backend"],
+    "featuredFor": ["backend"]
+  },
+  {
+    "name": "Container Terminal System (CTS)",
+    "character": "Professional Projects",
+    "timeline": "2 Years",
+    "description": "Maintenance and support for CTS, a legacy system managing daily operations at a maritime container terminal. The platform handled container tracking across vessels, inventory control, billing, and work orders. Worked primarily with Oracle Forms and PL/SQL for bug fixing and incremental improvements. Contributed to introducing automated testing via Power Automate, adapting the QA strategy to a legacy stack that couldn't support modern testing frameworks.",
+    "stack": ["Oracle Forms", "PL/SQL", "Oracle Database"],
+    "audiences": ["fullstack", "backend"],
+    "featuredFor": ["backend"]
+  },
+  {
     "name": "Maquiver",
-    "character": "Proyecto laboral",
-    "timeline": "5 meses",
-    "description": "Web system for a mechanical parts company. Managed work orders, inventory control, requisitions, and client tracking.",
+    "character": "Professional Projects",
+    "timeline": "5 Months",
+    "description": "Full-stack web system for a mechanical parts manufacturer. The platform handled work orders, inventory, requisitions, billing, and client tracking. Covered the full development cycle: new features, bug fixes, documentation, and manual deployments on client-managed infrastructure.",
     "stack": ["PHP", "HTML", "JavaScript", "CodeIgniter"],
     "audiences": ["fullstack", "backend", "frontend"],
     "featuredFor": ["fullstack", "backend"]
   },
   {
+    "name": "Ehecatl CRM",
+    "character": "Professional Projects",
+    "timeline": "1 Year",
+    "description": "In-house CRM developed and maintained for Ehecatl Software Services. Responsible for feature development and ongoing maintenance of the platform's business logic and data layer, working with C# and Entity Framework.",
+    "stack": ["C#", "Entity Framework", "SQL Server"],
+    "audiences": ["backend", "fullstack"],
+    "featuredFor": ["backend"]
+  },
+  {
     "name": "Signati Litteris",
-    "character": "Proyecto laboral",
-    "timeline": "5 meses",
+    "character": "Academic Projects",
+    "timeline": "5 Months",
     "description": "Academic project focused on official document validation using digital certificates and electronic signatures, similar to the model used in electronic invoicing.",
     "stack": ["PHP", "HTML", "JavaScript", "PDF"],
     "audiences": ["backend", "fullstack", "shared"],
@@ -19,11 +64,38 @@
   },
   {
     "name": "Manitas Limpias",
-    "character": "Proyecto freelance",
-    "timeline": "6 meses",
+    "character": "Freelance Projects",
+    "timeline": "6 Months",
     "description": "App developed for a psychology master's student to demonstrate the potential of gamification as a learning tool for children. Built in a multidisciplinary team with a psychologist, programmers, and a graphic designer.",
-    "stack": ["C#", "Unity", "UX educativo"],
+    "stack": ["C#", "Unity", "Educative UX"],
     "audiences": ["gamedev", "fullstack", "shared"],
     "featuredFor": ["gamedev"]
+  },
+  {
+    "name": "Bonafont Operational Efficiency Processor",
+    "character": "Freelance Projects",
+    "timeline": "2 Months",
+    "description": "VBA script developed for Grupo Bonafont to automate the calculation of operational efficiency metrics from raw Excel data. Replaced a manual, copy-paste-heavy reporting process with a structured, automated workflow tailored to the team's specific operational needs.",
+    "stack": ["VBA", "Excel"],
+    "audiences": ["backend", "shared"],
+    "featuredFor": ["backend"]
+  },
+  {
+    "name": "ACP – Aplicación para Cartas Porte",
+    "character": "Freelance Projects",
+    "timeline": "5 Years",
+    "description": "Desktop application built for Transportes Virgo to streamline SAP data entry for Cartas Porte, the Mexican fiscal document required for cargo transport. Automated the data loading process using OCR (Tesseract.js) and PDF parsing (pdf-parse), significantly reducing manual copy-paste workflows and data entry time.",
+    "stack": ["Electron", "HTML", "Bootstrap", "JavaScript", "Tesseract.js", "pdf-parse"],
+    "audiences": ["fullstack", "backend"],
+    "featuredFor": ["fullstack"]
+  },
+  {
+    "name": "QR Wallet Codes",
+    "character": "Personal Projects",
+    "timeline": "2 Weeks",
+    "description": "Personal Android app inspired by Google Wallet, built to manage and display QR codes on demand. Syncs with a paired Wear OS device to show codes directly on the watch, and includes a phone-side QR scanner. Developed using a Vibe AI Coding workflow — leveraging AI assistance throughout the build — combining Kotlin, Jetpack Compose, and Wear OS APIs.",
+    "stack": ["Kotlin", "Jetpack Compose", "Wear OS"],
+    "audiences": ["fullstack", "shared"],
+    "featuredFor": ["fullstack"]
   }
 ]
