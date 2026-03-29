@@ -1,5 +1,15 @@
 [
   {
+    "name": "Oracle Jet",
+    "focus": "Interfaces SPA",
+    "audiences": ["frontend", "fullstack"]
+  },
+  {
+    "name": "Springboot",
+    "focus": "Backend Java API REST",
+    "audiences": ["backend", "fullstack"]
+  },
+  {
     "name": "Angular",
     "focus": "Interfaces SPA",
     "audiences": ["frontend", "fullstack"]

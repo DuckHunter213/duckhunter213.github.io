@@ -1,5 +1,20 @@
 [
   {
+    "name": "Microsoft Office 365",
+    "focus": "Documentation",
+    "audiences": ["fullstack", "backend", "frontend"]
+  },
+  {
+    "name": "Grafana",
+    "focus": "Observability",
+    "audiences": ["fullstack","frontend"]
+  },
+  {
+    "name": "Prometheus",
+    "focus": "Observability",
+    "audiences": ["fullstack", "backend"]
+  },
+  {
     "name": "Git",
     "focus": "Versionamiento",
     "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
@@ -17,6 +32,16 @@
   {
     "name": "MySQL",
     "focus": "Base de datos",
+    "audiences": ["backend", "fullstack", "shared"]
+  },
+  {
+    "name": "Oracle Database",
+    "focus": "Database",
+    "audiences": ["backend", "fullstack", "shared"]
+  },
+  {
+    "name": "SQL Server",
+    "focus": "Database",
     "audiences": ["backend", "fullstack", "shared"]
   },
   {

@@ -7,9 +7,9 @@
   "linkedin": "",
   "defaultAudience": "fullstack",
   "highlights": [
-    "7 years of software development experience across professional, freelance, and academic projects.",
-    "Hands-on work with legacy code, migrations, and real production environments.",
-    "Experience in multidisciplinary teams and development of web and interactive applications with C# and Unity."
+    "Grew from Staff Consultant to Solutions Architect at Oracle over 4+ years — most recently designing development standards for a distributed team of 19 engineers across Mexico and India.",
+    "Production experience across telecom networks (3G/4G/5G), maritime port logistics, and enterprise automation — including legacy migrations, CI/CD pipelines, and AI feature integration.",
+    "Technical range across web, desktop, mobile, and scripting: JavaScript, C#, Kotlin, Java, PHP, Python, and VBA applied across professional, freelance, and personal projects."
   ],
   "headlines": {
     "fullstack": "Software Engineer Full Stack",
@@ -18,9 +18,9 @@
     "gamedev": "Developer C# / Unity"
   },
   "summaries": {
-    "fullstack": "Developer with 7 years of experience building and maintaining web applications end to end. I've worked in professional environments with legacy code and internal CRMs, and on personal projects where I own every layer of the stack.",
-    "backend": "Developer focused on business logic, system integration, and application maintenance. Experience with databases, migrations, APIs, and services in real production environments.",
-    "frontend": "Developer with a solid web foundation, focused on building functional interfaces tied to real product needs. I care as much about the visual detail as the logic behind it.",
-    "gamedev": "Developer with Unity and C# experience applied to interactive projects with purpose. I've worked in multidisciplinary teams combining game logic, UX, and concrete communication or learning goals."
+    "fullstack": "Software engineer with 7 years of experience delivering across the full stack in real production environments. At Oracle I've shipped features, led code reviews, improved CI/CD pipelines, and integrated AI capabilities into a live telecom observability platform. Outside of work I build across web, desktop (Electron), and mobile (Kotlin/Wear OS) — picking the right tool for the job.",
+    "backend": "Engineer with a backend focus built on real integration work: connecting Microsoft Teams to Oracle SBC infrastructure (UcaaS), orchestrating network config replication across SBC nodes (SBC Automation), and maintaining PL/SQL systems for a maritime terminal. I understand how systems connect at the operational level, not just the code level.",
+    "frontend": "Developer with frontend experience grounded in product work — migrating a legacy PHP application to Oracle JET, maintaining UI components in an active team, and building interfaces tied to real operational workflows. I think about the user's context as much as the technical implementation.",
+    "gamedev": "Developer with C# and Unity experience applied to purposeful interactive projects. I've worked in multidisciplinary teams combining game logic, UX, and educational goals. Currently expanding into mobile with Kotlin and Wear OS, and comfortable using AI-assisted coding workflows to move fast on personal builds."
   }
 }

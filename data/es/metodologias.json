@@ -5,6 +5,51 @@
     "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
   },
   {
+    "name": "Kanban",
+    "focus": "Gestion de flujo",
+    "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
+  },
+  {
+    "name": "Programacion Orientada a Objetos",
+    "focus": "Diseño de software",
+    "audiences": ["fullstack", "backend", "gamedev", "shared"]
+  },
+  {
+    "name": "SOLID",
+    "focus": "Principios de diseño",
+    "audiences": ["fullstack", "backend", "gamedev", "shared"]
+  },
+  {
+    "name": "Clean Code",
+    "focus": "Calidad de codigo",
+    "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
+  },
+  {
+    "name": "MVC",
+    "focus": "Patron de arquitectura",
+    "audiences": ["fullstack", "backend", "frontend", "shared"]
+  },
+  {
+    "name": "REST / RESTful",
+    "focus": "Diseño de APIs",
+    "audiences": ["backend", "fullstack", "shared"]
+  },
+  {
+    "name": "CI/CD",
+    "focus": "Automatizacion de despliegue",
+    "audiences": ["fullstack", "backend", "shared"]
+  },
+  {
+    "name": "Code Review",
+    "focus": "Aseguramiento de calidad",
+    "audiences": ["fullstack", "backend", "frontend", "shared"]
+  },
+  {
+    "name": "Desarrollo Asistido por IA",
+    "focus": "Copilot / Vibe Coding",
+    "audiences": ["fullstack", "backend", "frontend", "gamedev", "shared"]
+  },
+  {
     "name": "ICONIX",
     "focus": "Analisis y modelado",
     "audiences": ["backend", "fullstack", "shared"]
